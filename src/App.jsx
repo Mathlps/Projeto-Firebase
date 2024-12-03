@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "./firebase";
-import { UserForm } from "./UserForm";
-import { Anotacoes } from "./Anotacao";
 import Card from "./BoxAnotacao";
-import { UserList } from "./UserList";
+import "./App.css"
+import ButtonCriar from "./ButtonCriar";
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -25,14 +24,12 @@ export const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Gerenciamento de Usuários</h1>
-      <UserForm onUserCreated={fetchUsers} />
-      <UserList users={users} onUserDeleted={fetchUsers} />
-      <Anotacoes/>
-      <Card/>
-    </div>
-
-    
+    <>
+      <div className="header-container">
+        <h1 className="Title">TodoApp</h1>  
+      </div>
+        <Card/>
+        <ButtonCriar/>
+    </> 
   );
 };

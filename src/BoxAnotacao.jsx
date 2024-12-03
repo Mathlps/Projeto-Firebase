@@ -4,7 +4,7 @@ import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
 
 // Componente principal
-export const Anotacoes = () => {
+export const AnotacoesCard = () => {
   const [anotacoes, setAnotacoes] = useState([]);
 
   const anotacaoCollectionRef = collection(db, "anotacao");
@@ -38,8 +38,7 @@ export const Anotacoes = () => {
 
   return (
     <div>
-      <h1>Lista de Anotações</h1>
-      <div>
+      <div className="container">
         {anotacoes.map((anotacao) => (
           <Card key={anotacao.id} anotacao={anotacao} onDelete={deleteAnotacao} />
         ))}
@@ -51,7 +50,8 @@ export const Anotacoes = () => {
 // Componente Card
 const Card = ({ anotacao, onDelete }) => {
   return (
-    <div className="cookie-card">
+    
+      <div className="cookie-card">
       <span className="title">{anotacao.titulo}</span>
       <p className="description">{anotacao.texto}</p>
       <p>
@@ -72,7 +72,8 @@ const Card = ({ anotacao, onDelete }) => {
         </button>
       </div>
     </div>
+  
   );
 };
 
-export default Anotacoes;
+export default AnotacoesCard;

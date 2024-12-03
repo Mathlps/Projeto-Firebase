@@ -1,10 +1,21 @@
+.container {
+  width: 100%;
+  display: flex; /* Define um layout flexível */
+  flex-wrap: wrap; /* Permite quebra de linha se o espaço não for suficiente */
+  gap: 1rem; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  align-items: flex-start; /* Alinha os cards no topo verticalmente */
+  padding: 1rem;
+}
+
 .cookie-card {
-    max-width: 320px;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
-  }
+  width: 300px; /* Define largura fixa */
+  max-width: 100%; /* Impede que o card ultrapasse o espaço disponível */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
   .title {
     font-weight: 600;
