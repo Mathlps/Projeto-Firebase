@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, addDoc, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
+import { Timestamp } from "firebase/firestore";
 
 export const Anotacoes = () => {
     const [titulo, setTitulo] = useState("");
@@ -15,7 +16,11 @@ export const Anotacoes = () => {
             return;
         }
         try {
-            await addDoc(anotacaoCollectionRef, { titulo, texto });
+            await addDoc(anotacaoCollectionRef, {
+                titulo,
+                texto,
+                createdAt: Timestamp.now(), // Adiciona o timestamp de criação
+            });
             alert("Anotação salva com sucesso!");
             setTitulo("");
             setTexto("");
@@ -76,6 +81,9 @@ export const Anotacoes = () => {
                         </li>
                         <li>
                             <strong>Texto:</strong> {anotacao.texto}
+                        </li>
+                        <li>
+                            <strong>Data:</strong> {anotacao.createdAt?.toDate().toLocaleString()}
                         </li>
                         <button onClick={() => deleteAnotacao(anotacao.id)}>Deletar</button>
                     </div>

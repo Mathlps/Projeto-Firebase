@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "./firebase";
 import { UserForm } from "./UserForm";
-import { UserList } from "./UserList";
 import { Anotacoes } from "./Anotacao";
+import Card from "./BoxAnotacao";
+import { UserList } from "./UserList";
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -29,6 +30,7 @@ export const App = () => {
       <UserForm onUserCreated={fetchUsers} />
       <UserList users={users} onUserDeleted={fetchUsers} />
       <Anotacoes/>
+      <Card/>
     </div>
 
     
