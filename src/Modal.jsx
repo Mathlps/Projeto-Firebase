@@ -49,7 +49,7 @@ function Modal() {
             <h2>Formulário</h2>
             <form onSubmit={handleSubmit}>
               <label>
-                Nome:
+                Título:
                 <input
                                 type="text"
                                 placeholder="Título..."

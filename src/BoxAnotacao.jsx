@@ -64,12 +64,12 @@ const Card = ({ anotacao, onDelete }) => {
         </p>
       </div>
       <div className="actions">
-        <button
+        {/* <button
           className="pref"
           onClick={() => alert("Funcionalidade 'View' ainda não implementada.")}
         >
           View
-        </button>
+        </button> */}
         <button className="accept" onClick={() => onDelete(anotacao.id)}>
           Deletar
         </button>
