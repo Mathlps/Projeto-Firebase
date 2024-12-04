@@ -3,7 +3,7 @@ import "./BoxAnotacao.css";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
 
-// Componente principal
+
 export const AnotacoesCard = () => {
   const [anotacoes, setAnotacoes] = useState([]);
 
@@ -24,8 +24,7 @@ export const AnotacoesCard = () => {
     try {
       const anotacaoDoc = doc(db, "anotacao", id);
       await deleteDoc(anotacaoDoc);
-      alert("Anotação deletada!");
-      fetchAnotacoes(); // Atualiza a lista
+      setAnotacoes((prev) => prev.filter((anotacao) => anotacao.id !== id)); // Atualiza a lista
     } catch (error) {
       console.error("Erro ao deletar anotação:", error);
     }
@@ -50,8 +49,7 @@ export const AnotacoesCard = () => {
 // Componente Card
 const Card = ({ anotacao, onDelete }) => {
   return (
-    
-      <div className="cookie-card">
+    <div className="cookie-card">
       <span className="title">{anotacao.titulo}</span>
       <p className="description">{anotacao.texto}</p>
       <p>
@@ -72,7 +70,6 @@ const Card = ({ anotacao, onDelete }) => {
         </button>
       </div>
     </div>
-  
   );
 };
 

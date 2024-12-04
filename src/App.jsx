@@ -3,7 +3,7 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "./firebase";
 import Card from "./BoxAnotacao";
 import "./App.css"
-import ButtonCriar from "./ButtonCriar";
+import Modal from "./Modal";
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -29,7 +29,7 @@ export const App = () => {
         <h1 className="Title">TodoApp</h1>  
       </div>
         <Card/>
-        <ButtonCriar/>
+        <Modal/>
     </> 
   );
 };
