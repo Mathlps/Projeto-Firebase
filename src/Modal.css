@@ -48,6 +48,9 @@
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    height: auto;
+    resize: none;
+    overflow: hidden;
   }
   
   button[type="submit"] {

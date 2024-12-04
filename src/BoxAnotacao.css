@@ -9,8 +9,11 @@
 }
 
 .cookie-card {
+  display: flex;
+  flex-direction: column;
   width: 300px; /* Define largura fixa */
   max-width: 100%; /* Impede que o card ultrapasse o espaço disponível */
+  height: auto;
   background-color: #fff;
   border-radius: 10px;
   padding: 1rem;

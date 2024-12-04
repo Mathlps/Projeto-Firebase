@@ -25,6 +25,7 @@ export const AnotacoesCard = () => {
       const anotacaoDoc = doc(db, "anotacao", id);
       await deleteDoc(anotacaoDoc);
       setAnotacoes((prev) => prev.filter((anotacao) => anotacao.id !== id)); // Atualiza a lista
+      console.log("Anotação deletada");
     } catch (error) {
       console.error("Erro ao deletar anotação:", error);
     }
@@ -33,7 +34,7 @@ export const AnotacoesCard = () => {
   // useEffect para carregar anotações ao montar o componente
   useEffect(() => {
     fetchAnotacoes();
-  }, []);
+  }, [anotacoes]);
 
   return (
     <div>
@@ -50,14 +51,18 @@ export const AnotacoesCard = () => {
 const Card = ({ anotacao, onDelete }) => {
   return (
     <div className="cookie-card">
-      <span className="title">{anotacao.titulo}</span>
-      <p className="description">{anotacao.texto}</p>
-      <p>
-        <strong>Data:</strong>{" "}
-        {anotacao.createdAt
-          ? anotacao.createdAt.toDate().toLocaleString()
-          : "Data indisponível"}
-      </p>
+      <div>
+        <span className="title">{anotacao.titulo}</span>
+      </div>
+      <div>
+        <p className="description">{anotacao.texto}</p>
+        <p>
+          <strong>Data:</strong>{" "}
+          {anotacao.createdAt
+            ? anotacao.createdAt.toDate().toLocaleString()
+            : "Data indisponível"}
+        </p>
+      </div>
       <div className="actions">
         <button
           className="pref"

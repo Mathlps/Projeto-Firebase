@@ -6,7 +6,7 @@ import "./Modal.css";
 function Modal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [titulo, setTitulo] = useState("");
-const [texto, setTexto] = useState("");
+  const [texto, setTexto] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,14 +23,20 @@ const [texto, setTexto] = useState("");
             createdAt: new Date(),
         });
         alert("Anotação criada com sucesso!");
+        console.log("Anotação criada");
         setTitulo("");
         setTexto("");
-        fetchAnotacoes(); // Atualiza a lista de anotações
     } catch (error) {
         console.error("Erro ao criar anotação:", error);
         alert("Erro ao criar anotação. Verifique o console.");
     }
     setIsModalOpen(false);
+  };
+
+  const ajustarAltura = (e) => {
+    const textarea = e.target;
+    textarea.style.height = "auto"; // Redefine a altura para calcular corretamente
+    textarea.style.height = `${textarea.scrollHeight}px`; // Define a altura com base no conteúdo
   };
 
 
@@ -57,6 +63,7 @@ const [texto, setTexto] = useState("");
                                 placeholder="Texto..."
                                 value={texto}
                                 onChange={(e) => setTexto(e.target.value)}
+                                onInput={ajustarAltura}
                                 className="text-area"
                             />
               </label>
