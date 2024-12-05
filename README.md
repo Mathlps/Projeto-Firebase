@@ -1,8 +1,11 @@
-# React + Vite
+# TodoApp com React e Firebase <img src="https://img.icons8.com/?size=100&id=t5K2CR8feVdX&format=png&color=000000" style="height: 2rem"> + <img src="https://www.svgrepo.com/show/353735/firebase.svg" style="height: 2rem">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação de gerenciamento de anotações (TodoApp) desenvolvida com React e Firebase.
+A aplicação permite que os usuários criem, visualizem e excluam anotações de forma simples e intuitiva.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+**1. React:** Biblioteca JavaScript para construção de interfaces de usuário;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**2. Firebase:** Plataforma de desenvolvimento de aplicativos que fornece serviços como autenticação, banco de dados em tempo real e armazenamento;
+
+**3. Vite:** Ferramenta de construção que oferece um ambiente de desenvolvimento rápido e otimizado para projetos em JavaScript.
